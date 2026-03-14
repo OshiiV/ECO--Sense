@@ -338,7 +338,7 @@ def plot_forecast_chart(col_key, color, title, unit, warn_val, danger_val):
 
 # ── MAIN TABS ─────────────────────────────────────────────────────────────────
 tab_overview, tab_temp, tab_humid, tab_air, tab_dust, tab_forecast = st.tabs([
-    "Summary", "🌡️ Temperature", "💧 Humidity", "💨 Air Quality", "🔴 Dust", " Predictive Lab"
+    "Summary", "Temperature", "Humidity", "Air Quality", "Dust", " Predictive Lab"
 ])
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -372,7 +372,7 @@ with tab_overview:
 with tab_temp:
     st.markdown('<div class="tab-desc">Deep dive into temperature analytics. Track historical heat trends against forecasted statistical bands to prevent overheating events.</div>', unsafe_allow_html=True)
     
-    with st.expander("⚙️ Adjust Temperature Thresholds"):
+    with st.expander("Adjust Temperature Thresholds"):
         c1, c2 = st.columns(2)
         st.session_state.tmp_w = c1.slider("Warning Level (°C)", 18, 40, st.session_state.tmp_w, 1)
         st.session_state.tmp_d = c2.slider("Danger Level (°C)", 20, 45, st.session_state.tmp_d, 1)
@@ -386,7 +386,7 @@ with tab_temp:
 with tab_humid:
     st.markdown('<div class="tab-desc">Monitor moisture levels in the environment. High humidity combined with heat can damage sensitive equipment or promote mold growth.</div>', unsafe_allow_html=True)
     
-    with st.expander("⚙️ Adjust Humidity Thresholds"):
+    with st.expander("Adjust Humidity Thresholds"):
         c1, c2 = st.columns(2)
         st.session_state.hum_w = c1.slider("Warning Level (%)", 30, 85, st.session_state.hum_w, 5)
         st.session_state.hum_d = c2.slider("Danger Level (%)", 40, 95, st.session_state.hum_d, 5)
@@ -400,7 +400,7 @@ with tab_humid:
 with tab_air:
     st.markdown('<div class="tab-desc">Analyze carbon dioxide concentrations. Rising CO₂ levels often indicate poor ventilation or high occupancy rates, which can impact cognitive function.</div>', unsafe_allow_html=True)
     
-    with st.expander("⚙️ Adjust CO₂ Thresholds"):
+    with st.expander("Adjust CO₂ Thresholds"):
         c1, c2 = st.columns(2)
         st.session_state.co2_w = c1.slider("Warning Level (ppm)", 400, 1500, st.session_state.co2_w, 50)
         st.session_state.co2_d = c2.slider("Danger Level (ppm)", 500, 2000, st.session_state.co2_d, 50)
@@ -414,7 +414,7 @@ with tab_air:
 with tab_dust:
     st.markdown('<div class="tab-desc">Track fine particulate matter (PM2.5) suspended in the air. High dust concentrations are a primary health hazard for respiration and clean-room environments.</div>', unsafe_allow_html=True)
     
-    with st.expander("⚙️ Adjust Dust Thresholds"):
+    with st.expander("Adjust Dust Thresholds"):
         c1, c2 = st.columns(2)
         st.session_state.dst_w = c1.slider("Warning Level (µg/m³)", 5, 75, st.session_state.dst_w, 5)
         st.session_state.dst_d = c2.slider("Danger Level (µg/m³)", 10, 100, st.session_state.dst_d, 5)
